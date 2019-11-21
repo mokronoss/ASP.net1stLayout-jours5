@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Best Movies - NetFlask 4Ever";
+
+}
+@section HeaderInfo
+{
+    @{
+        Html.RenderPartial("~/Views/Shared/_GeneralHeader.cshtml");
+    }
+}
+<div class="right-content">
+    <div class="right-content-heading">
+        <div class="right-content-heading-left">
+            <h3 class="head">Bandes Annonces</h3>
+        </div>
+    </div>
+     
+    
+    <div class="content-grids">
+        @foreach (NetFlask.Models.MovieInfo item in Model)
+        {
+
+
+        <div class="content-grid">
+            @* ajouter le popup *@
+            @section MoreCss
+
+
+            @* sans le popup *@
+            @* <iframe src="@item.Video" frameborder="0" allowfullscreen></iframe>*@
+            <h3>@item.Title</h3>
+            <ul class="button">
+                <li><a href="#"><img src="/images/likes.png" title="image-name" /></a></li>
+                <li><a href="#"><img src="/images/views.png" title="image-name" /></a></li>
+                <li><a href="#"><img src="/images/link.png" title="image-name" /></a></li>
+            </ul>
+        </div>
+        }
+        <div class="clearfix"> </div>
+        <!---start-pagination----->
+        <div class="pagenation">
+            <ul>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">Next</a></li>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+        <!---End-pagination----->
+    </div>
+</div>
+<div class="clearfix"> </div>
+			</div>	
